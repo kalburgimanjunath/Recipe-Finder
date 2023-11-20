@@ -10,8 +10,10 @@ export default function Home() {
     setSearchText(value);
   };
   const filterReceipe =
-    (receipe && receipe.filter((item) => item.name.includes(searchTxt))) ||
-    item.ingredients.filter((initem) => initem.name.includes(searchTxt));
+    receipe && receipe.filter((item) => item.name.includes(searchTxt));
+  const filterIngreditents =
+    receipe && receipe.filter((initem) => initem.name.includes(searchTxt));
+
   return (
     <main className="flex min-h-screen flex-col items-center justify-between p-24">
       <div>Search Text:{searchTxt}</div>
