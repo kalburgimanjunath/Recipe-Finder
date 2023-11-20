@@ -30,10 +30,10 @@ export default function Home() {
     <main className="flex min-h-screen flex-col items-center justify-between p-24">
       <div>Search Text:{searchTxt}</div>
       <Search searchTxt={searchTxt} handleChange={handleSearch} />
-      <div>
+      <div className=" w-full shadow-lg border-1 p-5 bg-white z-10 justify-items-center">
         {filterReceipe.length > 0 && (
-          <div className="font-bold">
-            Search Results:
+          <div>
+            <div className="font-bold">Search Results:</div>
             <br />
             {filterReceipe && filterReceipe.length > 0 ? (
               <div>
