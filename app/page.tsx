@@ -3,6 +3,7 @@ import { useState, useEffect } from "react";
 import Image from "next/image";
 import { Search } from "./components/Search";
 import { receipe } from "./data/receipe";
+import Link from "next/link";
 export default function Home() {
   const [searchTxt, setSearchText] = useState("pot");
 
@@ -26,7 +27,11 @@ export default function Home() {
             {filterReceipe && filterReceipe.length > 0 ? (
               <div>
                 {filterReceipe.map((item) => (
-                  <div>{item.name}</div>
+                  <div>
+                    <Link href={`/receipe/${encodeURIComponent(item.name)}`}>
+                      {item.name}
+                    </Link>
+                  </div>
                 ))}
               </div>
             ) : (
